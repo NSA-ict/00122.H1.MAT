@@ -1,80 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--This is demo project for NSA student id card ds;trlh -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="NSA.css">
-    <title>ID Card</title>
-   
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  /* Custom CSS */
+  :root {
+    --loader-width: 250px;
+    --loader-dot-size: 20px;
+  }
+
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Helvetica;
+    background-color: #f0f0f0;
+  }
+
+  .container {
+    height: 100vh;
+    width: 100vw;
+    font-family: Helvetica;
+    position: relative;
+  }
+
+  .loader {
+    height: var(--loader-dot-size);
+    width: var(--loader-width);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .loader--dot {
+    animation: loader 3s ease-in-out infinite;
+    height: var(--loader-dot-size);
+    width: var(--loader-dot-size);
+    border-radius: 100%;
+    background-color: black;
+    position: absolute;
+    border: 2px solid white;
+  }
+
+  .loader--dot:first-child {
+    background-color: #1e4272;
+    animation-delay: 0.5s;
+  }
+
+  .loader--dot:nth-child(2) {
+    background-color: #8c6daf;
+    animation-delay: 0.4s;
+  }
+
+  .loader--dot:nth-child(3) {
+    background-color: #f3c428;
+    animation-delay: 0.3s;
+  }
+
+  .loader--dot:nth-child(4) {
+    background-color: #f9a74b;
+    animation-delay: 0.2s;
+  }
+
+  .loader--dot:nth-child(5) {
+    background-color: #48c4fd;
+    animation-delay: 0.1s;
+  }
+
+  .loader--dot:nth-child(6) {
+    background-color: #fbef5a;
+    animation-delay: 0s;
+  }
+
+  .loader--text {
+    position: absolute;
+    top: 200%;
+    left: 0;
+    right: 0;
+    width: 4rem;
+    margin: auto;
+  }
+
+  .loader--text:after {
+    content: "Loading";
+    font-weight: bold;
+    animation: loading-text 3s infinite;
+  }
+
+  h1 {
+    color: rgb(75, 170, 248);
+  }
+
+  @keyframes loader {
+    15% {
+      transform: translateX(0);
+    }
+    45% {
+      transform: translateX(calc(var(--loader-width) - var(--loader-dot-size)));
+    }
+    65% {
+      transform: translateX(calc(var(--loader-width) - var(--loader-dot-size)));
+    }
+    95% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes loading-text {
+    0% {
+      content: "Loading";
+    }
+    25% {
+      content: "Loading.";
+    }
+    50% {
+      content: "Loading..";
+    }
+    75% {
+      content: "Loading...";
+    }
+  }
+
+  /* Message Styles */
+  .message {
+    text-align: center;
+    margin-top: 20px;
+  }
+</style>
+<script>
+  setTimeout(function() {
+    window.location.href = "https://ict-link.000webhostapp.com/";
+  }, 3000); // Redirect after 3 seconds
+</script>
 </head>
 <body>
-    <div class="container">
-        <div class="padding">
-        <div class="back">
-            <div class="idphoto">
-
-             <!-- This is for id photo -->
-
-                <img src="Hmaths-3.jpg" alt="">
-            </div>
-            <div class="logonsa">
-
-                <!-- This is for id photo -->
-   
-                   <img src="stamp.png" alt="">
-               </div>
-            <div class="">
-                <div class="etxt">
-                    <div class="year">
-                        <p class="p1"><b>(   ၂၀၂၂  -  ၂၀၂၃   )    ပညာသင်နှစ်</b></p>
-                        </div>
-                  <p> <b>အမည် :</b> မအိမ်သင်ထက်</p>
-<p> <b>ခုံအမှတ် :</b> H1 Maths -3</p>
-<p> <b>တက္ကသိုလ်မှတ်ပုံတင်အမှတ် :</b> NSA-00122</p>
-<p> <b>အဘအမည် :</b> ဦးအောင်မှီ</p>
-<p> <b>မွေးသက္ကရာဇ် :</b> ၂၇-၁၀-၂၀၀၁</p>
-<p> <b>နိုင်ငံသားစိစစ်ရေးအမှတ် :</b> ၉/ဇယသ(နိုင်)၀၀၇၄၆၃</p>
-<p> <b>နေရပ်လိပ်စာ :</b> အောင်ဇေယျစံပြရပ်ကွက်၊ဇေယျာသီရိမြို့နယ်၊နေပြည်တော်</p>
-<p> <b>ဖုန်းနံပါတ် :</b> ၀၉၆၉၁၀၆၆၇၀၀</p>
-
-
-               <div class="endstickfoot">
-                    <header>
-                        <main>
-                            <footer>
-                                © 2022 NSA  All the content of webpage belongs to us from ICT
-                            </footer>
-                        </main>
-                    </header>
-                </div>
-
-          
-            </div>
-        </div>
+  <div class="container">
+    <div class="loader">
+      <div class="loader--dot"></div>
+      <div class="loader--dot"></div>
+      <div class="loader--dot"></div>
+      <div class="loader--dot"></div>
+      <div class="loader--dot"></div>
+      <div class="loader--dot"></div>
+      <div class="loader--text"></div>
     </div>
-       
+    <div class="message">
+      <h1>Welcome to NSA</h1>
+     
     </div>
-</body>
-</body>
-
-</html>
-<!-- partial -->
-  <script  src="./index.js"></script>
-  
-  <script type="text/javascript">
-	
-    $(document).ready(function() {
-        $('body').bind('cut copy paste', function (e) {
-            e.preventDefault();
-        })
-        $(".code").on("contextmenu", function(e) {
-            return false;
-        })
-    })
-    
-    </script>
-
+  </div>
 </body>
 </html>
-
